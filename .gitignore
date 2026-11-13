@@ -1,0 +1,11 @@
+# 原始单文件（第三方作品，许可不明，不纳入公开仓库）
+original/
+
+# 构建与发布产物
+dist-toy.zip
+build/
+
+# 本地环境
+.workbuddy/
+node_modules/
+*.log
