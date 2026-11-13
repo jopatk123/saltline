@@ -1,0 +1,22 @@
+[Unit]
+Description=Saltline WebSocket relay
+After=network.target
+
+[Service]
+Type=simple
+WorkingDirectory=/root/opt/saltline
+ExecStart=/usr/bin/node server/relay.mjs
+Environment=PORT=9090
+Environment=MAX_ROOMS=16
+Environment=MAX_PLAYERS=8
+Environment=NODE_ENV=production
+Restart=on-failure
+RestartSec=3
+LimitNOFILE=65535
+
+# 单用户权限运行（可选，需把 /root/opt/saltline 交给该用户）
+# User=saltline
+# Group=saltline
+
+[Install]
+WantedBy=multi-user.target

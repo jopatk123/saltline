@@ -1,0 +1,18 @@
+{
+  "name": "saltline",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Saltline 联机层（net.js）与哑中继（server/relay.mjs）",
+  "scripts": {
+    "dev": "node tools/serve.mjs",
+    "relay": "node server/relay.mjs",
+    "test:relay": "node tests/relay.test.mjs",
+    "test:contract": "node tests/contract.mjs",
+    "test": "node tests/relay.test.mjs && node tests/contract.mjs && node tests/coop.test.mjs",
+    "pack:toy": "node tools/pack-toy.mjs"
+  },
+  "dependencies": {
+    "ws": "^8.18.0"
+  }
+}
